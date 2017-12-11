@@ -6,7 +6,8 @@ app = Flask(__name__)
 def test():
     api_key = "AIzaSyCb21lFiDWAH9mCc48qBvsLXSaRMN-BvME"
     mode = "walking"
-    origin = "VIT+Vellore"
+    origin = "VIT Vellore" #Current initial location is set to VIT Vellore
+    origin = origin.replace(" ","+")
     destination = request.form["data"]
     destination = destination.replace(" ", "+")
     base_url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&mode=" + mode + "&key=" + api_key
