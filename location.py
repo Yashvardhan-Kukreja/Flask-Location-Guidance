@@ -8,7 +8,7 @@ def test():
     mode = "walking"
     origin = "VIT Vellore" #Current initial location is set to VIT Vellore
     origin = origin.replace(" ","+")
-    destination = request.form["data"]
+    destination = request.json["data"]
     destination = destination.replace(" ", "+")
     base_url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&mode=" + mode + "&key=" + api_key
     client = requests.get(base_url)
